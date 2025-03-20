@@ -34,7 +34,7 @@
 
     <script>
         document.addEventListener("DOMContentLoaded", function() {
-            fetch("http://localhost:5000/notes")
+            fetch("https://backend-notes-gita-901699795850.us-central1.run.app/notes")
                 .then(response => response.json())
                 .then(data => {
                     const notesContainer = document.getElementById("notes-container");
@@ -70,7 +70,7 @@
 
                 // Fitur View Note
                 if (target.classList.contains("view-btn")) {
-                    fetch(`http://localhost:5000/notes/${noteId}`)
+                    fetch(`https://backend-notes-gita-901699795850.us-central1.run.app/notes/${noteId}`)
                         .then(response => response.json())
                         .then(note => {
                             showModal("View Note", `
@@ -83,7 +83,7 @@
 
                 // Fitur Edit Note
                 if (target.classList.contains("edit-btn")) {
-                    fetch(`http://localhost:5000/notes/${noteId}`)
+                    fetch(`https://backend-notes-gita-901699795850.us-central1.run.app/notes/${noteId}`)
                         .then(response => response.json())
                         .then(note => {
                             showModal("Edit Note", `
@@ -105,7 +105,7 @@
                                     content: document.getElementById("edit-note-content").value
                                 };
 
-                                fetch(`http://localhost:5000/edit-note/${noteId}`, {
+                                fetch(`https://backend-notes-gita-901699795850.us-central1.run.app/edit-note/${noteId}`, {
                                     method: "PUT",
                                     headers: {
                                         "Content-Type": "application/json"
@@ -128,7 +128,7 @@
                 // Fitur Delete Note
                 if (target.classList.contains("delete-btn")) {
                     if (confirm("Are you sure you want to delete this note?")) {
-                        fetch(`http://localhost:5000/delete-note/${noteId}`, { method: "DELETE" })
+                        fetch(`https://backend-notes-gita-901699795850.us-central1.run.app/delete-note/${noteId}`, { method: "DELETE" })
                             .then(() => location.reload())
                             .catch(error => console.error("Error deleting note:", error));
                     }
