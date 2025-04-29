@@ -35,7 +35,7 @@
 
     <script>
         document.addEventListener("DOMContentLoaded", function() {
-            fetch('${BASE_URL}/notes')
+            fetch(${BASE_URL} + '/notes')
                 .then(response => response.json())
                 .then(data => {
                     const notesContainer = document.getElementById("notes-container");
