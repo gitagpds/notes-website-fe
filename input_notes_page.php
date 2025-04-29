@@ -77,7 +77,7 @@
             const title = document.getElementById("title").value;
             const content = document.getElementById("content").value;
 
-            const response = await fetch("${BASE_URL}/add-note", {
+            const response = await fetch('${BASE_URL}/add-note', {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json"
