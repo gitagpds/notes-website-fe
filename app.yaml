@@ -1,2 +1,2 @@
 runtime: php81
-service: default
+entrypoint: serve index.php
