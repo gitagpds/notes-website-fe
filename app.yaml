@@ -9,10 +9,7 @@ handlers:
 
   - url: /assets
     static_dir: assets
-  
-  - url: /
-    script: index.php
-    
+
   - url: /input_notes_page.php
     script: input_notes_page.php
     secure: always
@@ -22,3 +19,6 @@ handlers:
     script: view_notes_page.php
     secure: always
     login: optional
+
+  - url: /(.+)
+    script: index.php
