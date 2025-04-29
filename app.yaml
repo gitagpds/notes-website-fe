@@ -9,10 +9,9 @@ handlers:
 
   - url: /assets
     static_dir: assets
-
-    - url: /
+  
+  - url: /
     script: index.php
-
     
   - url: /input_notes_page.php
     script: input_notes_page.php
