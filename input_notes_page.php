@@ -8,6 +8,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
     <link rel="stylesheet" href="css/style_inputnotes.css">
+    <script src="js/config.js"></script>
     <style>
         #preview {
             min-height: 400px;
@@ -76,7 +77,7 @@
             const title = document.getElementById("title").value;
             const content = document.getElementById("content").value;
 
-            const response = await fetch("https://be-901699795850.us-central1.run.app/add-note", {
+            const response = await fetch("${BASE_URL}/add-note", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json"
