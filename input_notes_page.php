@@ -29,7 +29,7 @@
             </div>
             <div class="list-group list-group-flush">
                 <a href="input_notes_page.php" class="btn btn-purple text-white m-3">+ Note-taking</a>
-                <a href="home_page.php" class="list-group-item list-group-item-action" style="margin-top: 50px;"><i class="bi bi-house-door"></i> Home</a>
+                <a href="index.php" class="list-group-item list-group-item-action" style="margin-top: 50px;"><i class="bi bi-house-door"></i> Home</a>
                 <a href="view_notes_page.php" class="list-group-item list-group-item-action"><i class="bi bi-journal-text"></i> Your Notes</a>
             </div>
         </div>
