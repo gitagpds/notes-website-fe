@@ -7,6 +7,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
     <link rel="stylesheet" href="css/style_inputnotes.css">
+    <script src="js/config.js"></script>
 </head>
 <body>
     <div class="d-flex">
@@ -34,7 +35,7 @@
 
     <script>
         document.addEventListener("DOMContentLoaded", function() {
-            fetch("https://be-901699795850.us-central1.run.app/notes")
+            fetch("${BASE_URL}/notes")
                 .then(response => response.json())
                 .then(data => {
                     const notesContainer = document.getElementById("notes-container");
@@ -70,7 +71,7 @@
 
                 // Fitur View Note
                 if (target.classList.contains("view-btn")) {
-                    fetch(`https://be-901699795850.us-central1.run.app/notes/${noteId}`)
+                    fetch(`${BASE_URL}/notes/${noteId}`)
                         .then(response => response.json())
                         .then(note => {
                             showModal("View Note", `
@@ -83,7 +84,7 @@
 
                 // Fitur Edit Note
                 if (target.classList.contains("edit-btn")) {
-                    fetch(`https://be-901699795850.us-central1.run.app/notes/${noteId}`)
+                    fetch(`${BASE_URL}/notes/${noteId}`)
                         .then(response => response.json())
                         .then(note => {
                             showModal("Edit Note", `
@@ -105,7 +106,7 @@
                                     content: document.getElementById("edit-note-content").value
                                 };
 
-                                fetch(`https://be-901699795850.us-central1.run.app/edit-note/${noteId}`, {
+                                fetch(`${BASE_URL}/edit-note/${noteId}`, {
                                     method: "PUT",
                                     headers: {
                                         "Content-Type": "application/json"
@@ -128,7 +129,7 @@
                 // Fitur Delete Note
                 if (target.classList.contains("delete-btn")) {
                     if (confirm("Are you sure you want to delete this note?")) {
-                        fetch(`https://be-901699795850.us-central1.run.app/delete-note/${noteId}`, { method: "DELETE" })
+                        fetch(`${BASE_URL}/delete-note/${noteId}`, { method: "DELETE" })
                             .then(() => location.reload())
                             .catch(error => console.error("Error deleting note:", error));
                     }
