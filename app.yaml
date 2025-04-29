@@ -1,2 +1,12 @@
 runtime: php81
 entrypoint: serve index.php
+
+handlers:
+  - url: /css
+    static_dir: css
+
+  - url: /js
+    static_dir: js
+
+  - url: /assets
+    static_dir: assets
