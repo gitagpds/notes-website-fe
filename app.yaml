@@ -1,5 +1,4 @@
 runtime: php81
-entrypoint: serve index.php
 
 handlers:
   - url: /css
@@ -10,3 +9,9 @@ handlers:
 
   - url: /assets
     static_dir: assets
+    
+  - url: /input_notes_page.php
+    script: input_notes_page.php
+
+  - url: /view_notes_page.php
+    script: view_notes_page.php
